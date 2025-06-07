@@ -1,4 +1,4 @@
-import { Body, Controller, Get, Post, Query, Put } from '@nestjs/common';
+import { Body, Controller, Get, Post, Query, Put, Delete } from '@nestjs/common';
 import { AppService } from './app.service';
 
 @Controller()
@@ -23,5 +23,9 @@ export class AppController {
       return 'OK';
     }
     return 'INVALID';
+  }
+  @Delete()
+  deleteFlow(){
+    return 'Deleted';
   }
 }
