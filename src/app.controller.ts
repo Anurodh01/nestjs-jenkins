@@ -1,4 +1,4 @@
-import { Controller, Get, Query } from '@nestjs/common';
+import { Controller, Get, Query , Body} from '@nestjs/common';
 import { AppService } from './app.service';
 
 @Controller()
@@ -8,5 +8,12 @@ export class AppController {
   @Get()
   getHello(@Query('name') name:string): string {
     return this.appService.getHello(name); 
+  }
+  @Put()
+  UpdateFlow(@Body() body: {message: string }){
+    if(message){
+      return 'OK';
+    }
+    return 'INVALID';
   }
 }
