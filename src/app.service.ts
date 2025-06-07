@@ -5,4 +5,7 @@ export class AppService {
   getHello(name:string): string {
     return `Hello, ${name}!, Let"s run build! OK, Updated`;
   }
+  postMessage(message: string): string {
+    return `Received message: ${message}`;
+  }
 }
