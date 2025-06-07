@@ -1,4 +1,4 @@
-import { Body, Controller, Get, Post, Query } from '@nestjs/common';
+import { Body, Controller, Get, Post, Query, Put } from '@nestjs/common';
 import { AppService } from './app.service';
 
 @Controller()
@@ -16,5 +16,12 @@ export class AppController {
   @Get('health')
   healthCheck(): string {
     return 'OK';
+  }
+  @Put()
+  UpdateFlow(@Body() body: {message: string }){
+    if(body){
+      return 'OK';
+    }
+    return 'INVALID';
   }
 }
