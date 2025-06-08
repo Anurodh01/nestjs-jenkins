@@ -1,4 +1,4 @@
-import { Body, Controller, Get, Post, Query, Put, Delete } from '@nestjs/common';
+import { Body, Controller, Get, Post, Query, Put, Delete, Param } from '@nestjs/common';
 import { AppService } from './app.service';
 
 @Controller()
@@ -16,6 +16,10 @@ export class AppController {
   @Get('health')
   healthCheck(): string {
     return 'OK';
+  }
+  @Get("user/:username")
+  getUser(@Param('username') username: string): string {
+    return this.appService.getUser(username);
   }
   @Put()
   UpdateFlow(@Body() body: {message: string }){
