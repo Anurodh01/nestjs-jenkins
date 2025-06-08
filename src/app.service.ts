@@ -8,4 +8,7 @@ export class AppService {
   postMessage(message: string): string {
     return `Received message: ${message}`;
   }
+  getUser(username: string): string {
+    return `User: ${username}`;
+  }
 }
