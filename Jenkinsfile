@@ -4,8 +4,7 @@ pipeline {
     stages {
         stage('Clone') {
             steps {
-                git url: 'https://github.com/Anurodh01/nestjs-jenkins',
-                credentialsId: 'github-creds'
+                git url: 'https://github.com/Anurodh01/nestjs-jenkins'
             }
         }
 
